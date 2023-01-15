@@ -11,7 +11,7 @@ object Constants {
     const val BASE_URL: String = "http://api.openweathermap.org/data/"
     const val METRIC_UNIT: String = "metric"
 
-    // TODO (STEP 3: Add the SharedPreferences name and key name for storing the response data in it.)
+
     // START
     const val PREFERENCE_NAME = "WeatherAppPreference"
     const val WEATHER_RESPONSE_DATA = "weather_response_data"

@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     // A global variable for Current Longitude
     private var mLongitude: Double = 0.0
 
-    // TODO (STEP 1: Add a variable for SharedPreferences)
+
     // START
     // A global variable for the SharedPreferences
     private lateinit var mSharedPreferences: SharedPreferences
@@ -69,15 +69,13 @@ class MainActivity : AppCompatActivity() {
         // Initialize the Fused location variable
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        // TODO (STEP 2: Initialize the SharedPreferences variable.)
+
         // START
         // Initialize the SharedPreferences variable
         mSharedPreferences = getSharedPreferences(Constants.PREFERENCE_NAME, Context.MODE_PRIVATE)
         // END
 
-        // TODO (STEP 7: Call the UI method to populate the data in
-        //  the UI which are already stored in sharedPreferences earlier.
-        //  At first run it will be blank.)
+
         // START
         setupUI()
         // END
@@ -266,7 +264,7 @@ class MainActivity : AppCompatActivity() {
                         val weatherList: WeatherResponse = response.body()
                         Log.i("Response Result", "$weatherList")
 
-                        // TODO (STEP 4: Here we convert the response object to string and store the string in the SharedPreference.)
+
                         // START
                         // Here we have converted the model class in to Json String to store it in the SharedPreferences.
                         val weatherResponseJsonString = Gson().toJson(weatherList)
@@ -276,8 +274,6 @@ class MainActivity : AppCompatActivity() {
                         editor.apply()
                         // END
 
-                        // TODO (STEP 5: Remove the weather detail object as we will be getting
-                        //  the object in form of a string in the setup UI method.)
                         // START
                         setupUI()
                         // END
@@ -340,9 +336,7 @@ class MainActivity : AppCompatActivity() {
      */
     @RequiresApi(Build.VERSION_CODES.N)
     private fun setupUI() {
-        // TODO (STEP 6: Here we get the stored response from
-        //  SharedPreferences and again convert back to data object
-        //  to populate the data in the UI.)
+
         // START
         // Here we have got the latest stored response from the SharedPreference and converted back to the data model object.
         val weatherResponseJsonString =
